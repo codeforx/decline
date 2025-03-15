@@ -863,7 +863,7 @@ export class ClineProvider implements vscode.WebviewViewProvider {
 						const settingsFilter = message.text || ""
 						await vscode.commands.executeCommand(
 							"workbench.action.openSettings",
-							`@ext:saoudrizwan.claude-dev ${settingsFilter}`.trim(), // trim whitespace if no settings filter
+							`@ext:btwiuse.decline ${settingsFilter}`.trim(), // trim whitespace if no settings filter
 						)
 						break
 					}
