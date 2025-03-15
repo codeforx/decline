@@ -1,6 +1,7 @@
 name: "Publish Release"
 
 on:
+    push:
     workflow_dispatch:
         inputs:
             release-type:
@@ -77,6 +78,7 @@ jobs:
                   echo "Tagging with $VERSION"
                   git tag "$VERSION"
                   git push origin "$VERSION"
+              continue-on-error: true
 
             - name: Package and Publish Extension
               env:
@@ -93,6 +95,7 @@ jobs:
                     npm run publish:marketplace
                     echo "Successfully published release version ${{ steps.get_version.outputs.version }} to VS Code Marketplace and Open VSX Registry"
                   fi
+              continue-on-error: true
 
             # - name: Get Changelog Entry
             #   id: changelog
