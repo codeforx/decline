@@ -93,6 +93,7 @@ jobs:
                     npm run publish:marketplace
                     echo "Successfully published release version ${{ steps.get_version.outputs.version }} to VS Code Marketplace and Open VSX Registry"
                   fi
+              continue-on-error: true
 
             # - name: Get Changelog Entry
             #   id: changelog
